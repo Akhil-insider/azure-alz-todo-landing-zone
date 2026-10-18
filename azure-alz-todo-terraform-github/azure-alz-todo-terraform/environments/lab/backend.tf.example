@@ -1,0 +1,10 @@
+# Rename to backend.tf and fill in a pre-created Storage Account/container.
+# Do not commit state or storage access keys. Prefer OIDC/workload identity for CI.
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-tfstate"
+    storage_account_name = "sttfstatechangeme"
+    container_name       = "tfstate"
+    key                  = "alz-todo-lab.tfstate"
+  }
+}

@@ -1,0 +1,8 @@
+flowchart TB
+  Browser[Browser / Internet] --> DNS[GoDaddy A record<br/>todo.akhillabs.in]
+  DNS --> AGW[Application Gateway v2<br/>20.81.66.210 :80<br/>HTTPS pending]
+  AGW --> FE[Frontend VM<br/>10.1.1.4<br/>Nginx + React]
+  FE -->|/api :8000| BE[Backend VM<br/>10.2.1.4<br/>FastAPI]
+  BE -->|SQL TCP 1433| PE[Private Endpoint<br/>10.3.1.4]
+  PE --> SQL[Azure SQL<br/>TodoDB]
+  BE -. UDR / selected flow .-> FW[Azure Firewall Premium<br/>10.0.2.4]
