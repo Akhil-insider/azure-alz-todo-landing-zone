@@ -1,0 +1,23 @@
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+terraform.rc
+.terraformrc
+
+# Secrets and local config
+terraform.tfvars
+*.auto.tfvars
+.env
+*.pem
+*.key
+*.pfx
+*.p12
+id_rsa*
+credentials.json
